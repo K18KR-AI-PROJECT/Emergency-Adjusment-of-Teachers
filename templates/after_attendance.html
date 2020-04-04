@@ -1,0 +1,490 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Faculty AS</title>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script LANGUAGE="JavaScript">
+      function getParams(){
+          var idx = document.URL.indexOf('?');
+          var params = new Array();
+          if (idx != -1) {
+              var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+              for (var i=0; i<pairs.length; i++){
+                  nameVal = pairs[i].split('=');
+                  params[nameVal[0]] = nameVal[1];
+              }
+          }
+          return params;
+      }
+      params = getParams();
+      Day = unescape(params["Day"]);
+      One = unescape(params["1"]);
+      Two = unescape(params["2"]);
+      Three = unescape(params["3"]);
+      Four = unescape(params["4"]);
+      Five = unescape(params["5"]);
+    </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="text/babel">
+    class App extends React.Component {
+      state = {
+        Day: Day,
+        One: One === 'on' ? {text:'Present',class:'preset'} : {text:'Absent',class:'absent'}  ,
+        Two: Two === 'on' ? {text:'Present',class:'preset'} : {text:'Absent',class:'absent'},
+        Three: Three === 'on' ? {text:'Present',class:'preset'} : {text:'Absent',class:'absent'},
+        Four: Four === 'on' ? {text:'Present',class:'preset'} : {text:'Absent',class:'absent'},
+        Five: Five === 'on' ? {text:'Present',class:'preset'} : {text:'Absent',class:'absent'}
+      }
+      handleChange = (e) => {
+        this.setState({
+          name: e.target.value
+        })
+      }
+
+      render(){
+        const day = this.state.Day;
+        return(
+            <div className="app-content">
+              <table className="table table-dark">
+                <tbody>
+                <tr>
+                  <th>{this.state.Day}</th>
+                  <th>9-10</th>
+                  <th>10-11</th>
+                  <th>11-12</th>
+                  <th>12-01</th>
+                  <th>02-03</th>
+                  <th>03-04</th>
+                  <th>04-05</th>
+                </tr>
+                <tr>
+                  <td>Kirti Bala</td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 1 == e.Teacher_id %}
+                  {% if "Monday" == e.Day %}
+                  {% if "9-10" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 1 == e.Teacher_id %}
+                  {% if "Monday" == e.Day %}
+                  {% if "10-11" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 1 == e.Teacher_id %}
+                  {% if "Monday" == e.Day %}
+                  {% if "11-12" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 1 == e.Teacher_id %}
+                  {% if "Monday" == e.Day %}
+                  {% if "12-01" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 1 == e.Teacher_id %}
+                  {% if "Monday" == e.Day %}
+                  {% if "02-03" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 1 == e.Teacher_id %}
+                  {% if "Monday" == e.Day %}
+                  {% if "03-04" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 1 == e.Teacher_id %}
+                  {% if "Monday" == e.Day %}
+                  {% if "04-05" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Max Batia</td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 2 == e.Teacher_id %}
+                  {% if "Wednesday" == e.Day %}
+                  {% if "9-10" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 2 == e.Teacher_id %}
+                  {% if "Wednesday" == e.Day %}
+                  {% if "10-11" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 2 == e.Teacher_id %}
+                  {% if "Wednesday" == e.Day %}
+                  {% if "11-12" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 2 == e.Teacher_id %}
+                  {% if "Wednesday" == e.Day %}
+                  {% if "12-01" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 2 == e.Teacher_id %}
+                  {% if "Wednesday" == e.Day %}
+                  {% if "02-03" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 2 == e.Teacher_id %}
+                  {% if "Wednesday" == e.Day %}
+                  {% if "03-04" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 2 == e.Teacher_id %}
+                  {% if "Wednesday" == e.Day %}
+                  {% if "04-05" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nandini</td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 3 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "9-10" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 3 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "10-11" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 3 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "11-12" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 3 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "12-01" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 3 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "02-03" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 3 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "03-04" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 3 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "04-05" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Dr.Isha</td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 4 == e.Teacher_id %}
+                  {% if "Thursday" == e.Day %}
+                  {% if "9-10" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 4 == e.Teacher_id %}
+                  {% if "Thursday" == e.Day %}
+                  {% if "10-11" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 4 == e.Teacher_id %}
+                  {% if "Thursday" == e.Day %}
+                  {% if "11-12" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 4 == e.Teacher_id %}
+                  {% if "Thursday" == e.Day %}
+                  {% if "12-01" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 4 == e.Teacher_id %}
+                  {% if "Thursday" == e.Day %}
+                  {% if "02-03" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 4 == e.Teacher_id %}
+                  {% if "Thursday" == e.Day %}
+                  {% if "03-04" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 4 == e.Teacher_id %}
+                  {% if "Thursday" == e.Day %}
+                  {% if "04-05" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Amit Gaur</td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 5 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "9-10" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 5 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "10-11" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 5 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "11-12" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 5 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "12-01" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 5 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "02-03" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 5 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "03-04" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                  <td>
+                  {% for e in timetable  %}
+                  {% if 5 == e.Teacher_id %}
+                  {% if "Tuesday" == e.Day %}
+                  {% if "04-05" == e.Time %}
+                    {{e.Lecture}}
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+              <h6 className={this.state.One.class}>Kirti Bala : {this.state.One.text}</h6>
+              <h6 className={this.state.Two.class}>Max Bhatia : {this.state.Two.text}</h6>
+              <h6 className={this.state.Three.class}>Nandini : {this.state.Three.text}</h6>
+              <h6 className={this.state.Four.class}>Dr.Isha : {this.state.Four.text}</h6>
+              <h6 className={this.state.Five.class}>Amit Gaur : {this.state.Five.text}</h6>
+            </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<App />, document.getElementById('app'));
+  </script>
+</body>
+<style>
+  .absent {
+    color: red;
+  }
+  .preset {
+    color: teal;
+  }
+</style>
+</html>

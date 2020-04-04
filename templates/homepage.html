@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+  </head>
+  <body >
+    <form type=get action="after_attendance">
+      {% csrf_token %}
+        <div>
+          <label name="Day" for="Day">Choose day:</label>
+            <select name="Day" id="Day">
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+            </select>
+        </div>
+        <div>
+          {% for teacher in teachers  %}
+
+              <fieldset>
+                <label for="{{teacher.id}}" class="container" ><a href="/{{teacher.id}}"> {{teacher.Name}} </a></label>
+                <input type="checkbox" name="{{teacher.id}}" id="{{teacher.id}}" selected>
+              </fieldset>
+          {% endfor %}
+        </div>
+        <div>
+        <button>Submit</button>
+        </div>
+  </form>
+  </body>
+</html>

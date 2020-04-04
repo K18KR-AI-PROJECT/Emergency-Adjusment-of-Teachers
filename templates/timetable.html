@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+      <table class="table">
+        <caption>{{teacher.Name}}</caption>
+        <thead>
+        <tr>
+          <th>Time</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>9-10</td>
+          <td>
+            {% for e in timetable  %}
+            {% if "Monday" == e.Day %}
+            {% if "9-10" == e.Time %}
+              {{e.Lecture}}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% for e in timetable  %}
+            {% if "Tuesday" == e.Day %}
+            {% if "9-10" == e.Time %}
+              {{e.Lecture}}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% for e in timetable  %}
+            {% if "Wednesday" == e.Day %}
+            {% if "9-10" == e.Time %}
+              {{e.Lecture}}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% for e in timetable  %}
+            {% if "Thursday" == e.Day %}
+            {% if "9-10" == e.Time %}
+              {{e.Lecture}}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% for e in timetable  %}
+            {% if "Friday" == e.Day %}
+            {% if "9-10" == e.Time %}
+              {{e.Lecture}}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </td>
+        </tr>
+        <tr>
+          <td>10-11</td>
+          <td>
+            {% for e in timetable  %}
+            {% if "Monday" == e.Day %}
+            {% if "10-11" == e.Time %}
+              {{e.Lecture}}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% for e in timetable  %}
+            {% if "Tuesday" == e.Day %}
+            {% if "10-11" == e.Time %}
+              {{e.Lecture}}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% for e in timetable  %}
+            {% if "Wednesday" == e.Day %}
+            {% if "10-11" == e.Time %}
+              {{e.Lecture}}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% for e in timetable  %}
+            {% if "Thursday" == e.Day %}
+            {% if "10-11" == e.Time %}
+              {{e.Lecture}}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% for e in timetable  %}
+            {% if "Friday" == e.Day %}
+            {% if "10-11" == e.Time %}
+              {{e.Lecture}}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </td>
+         </tr>
+          <tr>
+            <td>11-12</td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Monday" == e.Day %}
+              {% if "11-12" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Tuesday" == e.Day %}
+              {% if "11-12" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Wednesday" == e.Day %}
+              {% if "11-12" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Thursday" == e.Day %}
+              {% if "11-12" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Friday" == e.Day %}
+              {% if "11-12" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <td>12-01</td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Monday" == e.Day %}
+              {% if "12-01" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Tuesday" == e.Day %}
+              {% if "12-01" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Wednesday" == e.Day %}
+              {% if "12-01" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Thursday" == e.Day %}
+              {% if "12-01" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Friday" == e.Day %}
+              {% if "12-01" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <td>02-03</td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Monday" == e.Day %}
+              {% if "02-03" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Tuesday" == e.Day %}
+              {% if "02-03" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Wednesday" == e.Day %}
+              {% if "02-03" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Thursday" == e.Day %}
+              {% if "02-03" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Friday" == e.Day %}
+              {% if "02-03" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <td>03-04</td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Monday" == e.Day %}
+              {% if "03-04" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Tuesday" == e.Day %}
+              {% if "03-04" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Wednesday" == e.Day %}
+              {% if "03-04" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Thursday" == e.Day %}
+              {% if "03-04" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Friday" == e.Day %}
+              {% if "03-04" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <td>04-05</td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Monday" == e.Day %}
+              {% if "04-05" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Tuesday" == e.Day %}
+              {% if "04-05" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Wednesday" == e.Day %}
+              {% if "04-05" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Thursday" == e.Day %}
+              {% if "04-05" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              {% for e in timetable  %}
+              {% if "Friday" == e.Day %}
+              {% if "04-05" == e.Time %}
+                {{e.Lecture}}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+            </td>
+          </tr>
+          </tbody>
+      </table>
+  </body>
+</html>

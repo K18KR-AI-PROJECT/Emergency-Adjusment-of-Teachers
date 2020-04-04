@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TT</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <div class="teachers">
+      {% for teacher in teachers  %}
+        <div class="teacher">
+          {{teacher.Name}}
+        </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
