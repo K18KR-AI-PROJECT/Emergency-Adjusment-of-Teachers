@@ -27,5 +27,5 @@ to update time-table of all the present teachers for the day
   
 # Run
   Run the following command in your command prompt in the folder containig all these files -
-   'run manage.py runserver'
+   'python manage.py runserver'
   
